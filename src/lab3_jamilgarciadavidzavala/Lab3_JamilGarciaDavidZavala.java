@@ -29,17 +29,17 @@ public class Lab3_JamilGarciaDavidZavala {
                     + "\n Elija una opción");
             int op = read.nextInt();
             switch (op) {
-                case 1: {
+                case 1: {//Locales
                     char sn2 = 's';
                     while (sn2 == 's') {
                         System.out.println("1. Tiendas" + "\n2. Qui0scos" + "\n3. Bares" + "\n0. Salir" + "\nElija una opción: ");
                         int opp = read.nextInt();
                         switch (opp) {
-                            case 1: {
+                            case 1: {//Tiendas
                                 System.out.println("1. Añadir" + "\n2. Modificar" + "\n 3. Eliminar" + "\n 4. Listar" + "\nElija una opción: ");
                                 int opp2 = read.nextInt();
                                 switch (opp2) {
-                                    case 1: {
+                                    case 1: {// Añadir
                                         System.out.println("Nombre:");
                                         String Name = read.next();
                                         read.next();
@@ -92,68 +92,71 @@ public class Lab3_JamilGarciaDavidZavala {
                                         Emp.remove(Manager);
                                         Tie.add(new Tiendas(tempR, tempJ, Name, tempE, tempP, tempM));
                                     }
-                                    case 2: {
+                                    case 2: { //Modificar
                                         //Listar tiendas
                                         System.out.println("Elija tienda a modificar ");
                                         int ModStore = read.nextInt();
                                         System.out.println("1.Nombre \n2.Empleado \n3. Producto \n4. Gerete \n Opción:");
                                         int Modsw = read.nextInt();
                                         switch (Modsw) {
-                                            case 1: {
+                                            case 1: {//Nombre
                                                 System.out.println("Nuevo Nombre: ");
                                                 String NName = read.next();
                                                 read.next();
                                                 break;
                                             }
-                                            case 2: {
+                                            case 2: {//Empleado
                                                 System.out.println("1. Contratar \n 2. Despedir");
                                                 int oopp = read.nextInt();
                                                 switch (oopp) {
-                                                    case 1: {
+                                                    case 1: { //Contratar
                                                         //listar empleados generales
                                                         System.out.println("Elija empleado a contratar: ");
                                                         int Hired = read.nextInt();
                                                         break;
                                                     }
-                                                    case 2: {
+                                                    case 2: { //Despedir
                                                         //listar empleados tienda
                                                         System.out.println("Elija empleado a despedir: ");
                                                         int fired = read.nextInt();
                                                     }
-                                                    default:
+                                                    default: 
+                                                        System.out.println("Error! Ingrese un valor valido!!");
                                                         break;
                                                 }
                                             }
-                                            case 3: {
+                                            case 3: { //Producto
                                                 System.out.println("1. Añadir \n 2. eliminar");
                                                 int oopp = read.nextInt();
                                                 switch (oopp) {
-                                                    case 1: {
+                                                    case 1: { //Añadir
                                                         //listar empleados generales
                                                         System.out.println("Elija empleado a contratar: ");
                                                         int Hired = read.nextInt();
                                                         break;
                                                     }
-                                                    case 2: {
+                                                    case 2: { //Eliminar
                                                         //listar empleados tienda
                                                         System.out.println("Elija empleado a despedir: ");
                                                         int fired = read.nextInt();
                                                     }
                                                     default:
+                                                        System.out.println("Error! Ingrese un valor valido!!");
                                                         break;
                                                 }
                                             }
-                                            case 4: {
+                                            case 4: { //Gerente
                                                 //listar empleados
                                                 System.out.println("Elija un nuevo Gerente");
                                                 int NMan = read.nextInt();
                                                 break;
                                             }
                                             default:
+                                                System.out.println("Error! Ingrese un valor valido!!");
                                                 break;
                                         }
                                     }
-                                    case 3: {
+                                    case 3: {//Eliminar
                                         //listar tiendas
                                         System.out.println("Elija tienda a Eliminar: ");
                                         int DelStor = read.nextInt();
@@ -166,19 +169,20 @@ public class Lab3_JamilGarciaDavidZavala {
                                         break;
                                     }
 
-                                    case 0:
+                                    default:
+                                        System.out.println("Error! Ingrese un valor valido!!");
                                 }
                                 break;
                             }
-                            case 2: {
+                            case 2: { //Quiosco
                                 System.out.println("1. Añadir" + "\n2. Cambiar Nombre" + "\n 3. Eliminar" + "\nElija una opción: ");
                                 break;
                             }
-                            case 3: {
+                            case 3: { //Bares
                                 System.out.println("1. Añadir" + "\n2. Cambiar Nombre" + "\n 3. Eliminar" + "\nElija una opción: ");
                                 break;
                             }
-                            case 0: {
+                            case 0: {//Salida
                                 sn2 = 'n';
                                 break;
                             }
@@ -190,7 +194,7 @@ public class Lab3_JamilGarciaDavidZavala {
                         break;
                     }
                 }
-                case 2: {
+                case 2: {//Personas
                     char sn2 = 's';
                     while (sn2 == 's') {
                         System.out.println("1. Empleados" + "\n2. Clientes" + "\n0. Salir" + "\nElija una opción: ");
@@ -216,7 +220,7 @@ public class Lab3_JamilGarciaDavidZavala {
                         break;
                     }
                 }
-                case 3: {
+                case 3: {//Productos
                     char sn2 = 's';
                     while (sn2 == 's') {
                         System.out.println("1. Tiendas" + "\n2. Quiscos" + "\n3. Bares" + "\n0. Salir" + "\nElija una opción: ");
@@ -247,7 +251,7 @@ public class Lab3_JamilGarciaDavidZavala {
                     }
                     break;
                 }
-                case 0: {
+                case 0: {//Salida
                     System.out.println("Desea salir [Y/N]: ");
                     char sal = read.next().charAt(0);
                     if (sal == 'y' || sal == 'Y' || sal == 'n' || sal == 'N') {
