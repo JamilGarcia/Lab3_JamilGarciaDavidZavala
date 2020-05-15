@@ -8,6 +8,7 @@ public class Bares extends Locales{
     private ArrayList <Comida> B_Comida;
 
     public Bares() {
+        super();
     }
 
     public Bares(ArrayList<Empleados> B_Empleados, ArrayList<Comida> B_Comida, String nombre, ArrayList<Empleados> empleados, ArrayList<lab3_jamilgarciadavidzavala.Productos> Productos, Empleados Gerente) {

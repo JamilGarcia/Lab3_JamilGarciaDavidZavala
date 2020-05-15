@@ -10,6 +10,7 @@ public class Quiosco extends Locales {
     private ArrayList <Comida> Q_Comida; 
 
     public Quiosco() {
+        super(); 
     }
 
     public Quiosco(String Q_Nombre, ArrayList<Ropa> Q_Ropa, ArrayList<Juguetes> Q_Juguetes, ArrayList<Comida> Q_Comida, String nombre, ArrayList<Empleados> empleados, ArrayList<lab3_jamilgarciadavidzavala.Productos> Productos, Empleados Gerente) {
