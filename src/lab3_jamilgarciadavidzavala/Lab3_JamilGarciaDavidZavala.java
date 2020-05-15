@@ -44,22 +44,53 @@ public class Lab3_JamilGarciaDavidZavala {
                                         String Name = read.next();
                                         read.next();
                                         char ssnn = 's';
+                                        ArrayList <Empleados> tempE = new ArrayList();
                                         while (ssnn == 's' || ssnn == 'S') {
-                                            //listas
-                                            //elegis
+                                            ImprimirArrayList(Emp);
+                                            System.out.println("Ingrese el empleado a contrar: ");
+                                            int empC = read.nextInt();
+                                            tempE.add(Emp.get(empC));
+                                            Emp.remove(empC);
+                                            
                                             System.out.println("Añadir otro empleado[S/N]");
                                             ssnn = read.next().charAt(0);
                                         }
                                         System.out.println("Productos");
                                         ssnn = 's';
+                                        ArrayList <Productos> tempP = new ArrayList();
+                                        ArrayList <Ropa> tempR = new ArrayList();
                                         while (ssnn == 's' || ssnn == 'S') {
-                                            //crea empleado
-                                            System.out.println("Crear otro producto[S/N]");
+                                            ImprimirArrayList(Rop);
+                                            System.out.println("Ingrese la ropa a vender: ");
+                                            int rop = read.nextInt();
+                                            tempR.add(Rop.get(rop));
+                                            tempP.add(Rop.get(rop));
+                                            Rop.remove(rop);
+                                            
+                                            System.out.println("Añadir otro producto[S/N]");
                                             ssnn = read.next().charAt(0);
                                         }
-                                        //listale empleados de tienda
+                                        
+                                        ArrayList <Juguetes> tempJ = new ArrayList();
+                                        while (ssnn == 's' || ssnn == 'S') {
+                                            ImprimirArrayList(Jug);
+                                            System.out.println("Ingrese el juguete a vender: ");
+                                            int jug = read.nextInt();
+                                            tempJ.add(Jug.get(jug));
+                                            tempP.add(Jug.get(jug));
+                                            Jug.remove(jug);
+                                            
+                                            System.out.println("Añadir otro producto[S/N]");
+                                            ssnn = read.next().charAt(0);
+                                        }
+                                        
+                                        
+                                        ImprimirArrayList(Emp);
                                         System.out.println("Elija el Gerente: ");
                                         int Manager = read.nextInt();
+                                        Empleados tempM = Emp.get(Manager);
+                                        Emp.remove(Manager);
+                                        Tie.add(new Tiendas(tempR, tempJ, Name, tempE, tempP, tempM));
                                     }
                                     case 2: {
                                         //Listar tiendas

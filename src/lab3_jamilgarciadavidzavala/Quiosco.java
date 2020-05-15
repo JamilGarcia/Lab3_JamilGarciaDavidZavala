@@ -12,7 +12,7 @@ public class Quiosco extends Locales {
         super(); 
     }
 
-    public Quiosco(String Q_Nombre, ArrayList<Ropa> Q_Ropa, ArrayList<Juguetes> Q_Juguetes, ArrayList<Comida> Q_Comida, String nombre, ArrayList<Empleados> empleados, ArrayList<lab3_jamilgarciadavidzavala.Productos> Productos, Empleados Gerente) {
+    public Quiosco(String Q_Nombre, ArrayList<Ropa> Q_Ropa, ArrayList<Juguetes> Q_Juguetes, String nombre, ArrayList<Empleados> empleados, ArrayList<lab3_jamilgarciadavidzavala.Productos> Productos, Empleados Gerente) {
         super(nombre, empleados, Productos, Gerente);
         this.Q_Nombre = Q_Nombre;
         this.Q_Ropa = Q_Ropa;
