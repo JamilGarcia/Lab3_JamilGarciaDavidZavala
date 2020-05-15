@@ -6,6 +6,15 @@ import java.util.Scanner;
 public class Lab3_JamilGarciaDavidZavala {
 
     static Scanner read = new Scanner(System.in);
+    static ArrayList <Empleados> Emp = new ArrayList();
+    static ArrayList <Clientes> Cli = new ArrayList();
+    static ArrayList <Tiendas> Tie = new ArrayList();
+    static ArrayList <Quiosco> Qui = new ArrayList();
+    static ArrayList <Bares> Bar = new ArrayList();
+    static ArrayList <Ropa> Rop = new ArrayList();
+    static ArrayList <Juguetes> Jug = new ArrayList();
+    static ArrayList <Comida> Com = new ArrayList();
+    
 
     public static void main(String[] args) {
         char sn = 's';
@@ -43,8 +52,9 @@ public class Lab3_JamilGarciaDavidZavala {
                                         read.next();
                                         char ssnn='s';
                                         while (ssnn=='s'||ssnn == 'S') {                                            
-                                            //crea empleado
-                                            System.out.println("Crear otro empleado[S/N]");
+                                            //contrar empleado
+                                            
+                                            System.out.println("Añadir otro empleado[S/N]");
                                             ssnn = read.next().charAt(0);
                                         }
                                         System.out.println("Productos");
