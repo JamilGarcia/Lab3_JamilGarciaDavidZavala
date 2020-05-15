@@ -1,14 +1,40 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab3_jamilgarciadavidzavala;
 
-/**
- *
- * @author JamilGarcía
- */
-public class Empleados {
+public class Empleados extends Personas{
+    
+    private String Hora; 
+    private int ProductosV; 
+
+    public Empleados() {
+        super();
+    }
+
+    public Empleados(String Hora, int ProductosV, int ID, String User, String pass, String Correo, String Nombre, String fechaN) {
+        super(ID, User, pass, Correo, Nombre, fechaN);
+        this.Hora = Hora;
+        this.ProductosV = ProductosV;
+    }
+
+    public String getHora() {
+        return Hora;
+    }
+
+    public void setHora(String Hora) {
+        this.Hora = Hora;
+    }
+
+    public int getProductosV() {
+        return ProductosV;
+    }
+
+    public void setProductosV(int ProductosV) {
+        this.ProductosV = ProductosV;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Empleados{" + "Hora=" + Hora + ", ProductosV=" + ProductosV + '}';
+    }
+    
     
 }

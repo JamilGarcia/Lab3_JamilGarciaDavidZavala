@@ -1,14 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab3_jamilgarciadavidzavala;
 
-/**
- *
- * @author JamilGarcía
- */
-public class Juguetes {
+public class Juguetes extends Productos{
+    
+    private String DescripJ; 
+
+    public Juguetes() {
+    }
+
+    public Juguetes(String DescripJ, String DescripP, String NombreP, int precio) {
+        super(DescripP, NombreP, precio);
+        this.DescripJ = DescripJ;
+    }
+
+    public String getDescripJ() {
+        return DescripJ;
+    }
+
+    public void setDescripJ(String DescripJ) {
+        this.DescripJ = DescripJ;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Juguetes{" + "DescripJ=" + DescripJ + '}';
+    }
+
     
 }

@@ -11,7 +11,7 @@ public class Tiendas extends Locales {
         super();
     }
 
-    public Tiendas(ArrayList<Ropa> T_Ropa, ArrayList<Juguetes> T_Juguetes, String nombre, ArrayList<Empleados> empleados, ArrayList<lab3_jamilgarciadavidzavala.Productos> Productos, String Gerente) {
+    public Tiendas(ArrayList<Ropa> T_Ropa, ArrayList<Juguetes> T_Juguetes, String nombre, ArrayList<Empleados> empleados, ArrayList<lab3_jamilgarciadavidzavala.Productos> Productos, Empleados Gerente) {
         super(nombre, empleados, Productos, Gerente);
         this.T_Ropa = T_Ropa;
         this.T_Juguetes = T_Juguetes;
@@ -37,7 +37,6 @@ public class Tiendas extends Locales {
     public String toString() {
         return super.toString() + "Tiendas{" + "T_Ropa=" + T_Ropa + ", T_Juguetes=" + T_Juguetes + '}';
     }
-    
     
     
 }

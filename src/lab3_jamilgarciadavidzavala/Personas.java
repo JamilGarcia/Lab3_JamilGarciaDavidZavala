@@ -1,14 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab3_jamilgarciadavidzavala;
 
-/**
- *
- * @author JamilGarcía
- */
 public class Personas {
+    
+    private int ID; 
+    private String User; 
+    private String pass; 
+    private String Correo; 
+    private String Nombre; 
+    private String fechaN;
+    
     
 }

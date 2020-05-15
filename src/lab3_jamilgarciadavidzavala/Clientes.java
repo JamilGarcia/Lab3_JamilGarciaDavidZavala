@@ -1,14 +1,43 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab3_jamilgarciadavidzavala;
 
-/**
- *
- * @author JamilGarcía
- */
-public class Clientes {
+import java.util.ArrayList;
+
+public class Clientes extends Personas{
+    
+    private int dinero; 
+    private ArrayList <Productos> carrito; 
+
+    public Clientes() {
+        super(); 
+    }
+
+    public Clientes(int dinero, ArrayList<Productos> carrito, int ID, String User, String pass, String Correo, String Nombre, String fechaN) {
+        super(ID, User, pass, Correo, Nombre, fechaN);
+        this.dinero = dinero;
+        this.carrito = carrito;
+    }
+
+    public int getDinero() {
+        return dinero;
+    }
+
+    public void setDinero(int dinero) {
+        this.dinero = dinero;
+    }
+
+    public ArrayList<Productos> getCarrito() {
+        return carrito;
+    }
+
+    public void setCarrito(ArrayList<Productos> carrito) {
+        this.carrito = carrito;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Clientes{" + "dinero=" + dinero + ", carrito=" + carrito + '}';
+    }
+    
+    
     
 }
