@@ -1,5 +1,6 @@
 package lab3_jamilgarciadavidzavala;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Lab3_JamilGarciaDavidZavala {
@@ -158,5 +159,14 @@ public class Lab3_JamilGarciaDavidZavala {
 
         }
     }
+    
+    public static void ImprimirArrayList (ArrayList a){
+        for (int i = 0; i < a.size(); i++) {
+            System.out.println("---------------------------------------");
+            System.out.println(i + ". " + a.get(i).toString());
+        }
+        
+    }
+    
 
 }
