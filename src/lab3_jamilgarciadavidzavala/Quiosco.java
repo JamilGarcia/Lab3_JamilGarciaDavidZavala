@@ -6,8 +6,7 @@ public class Quiosco extends Locales {
     
     private String Q_Nombre; 
     private ArrayList <Ropa> Q_Ropa; 
-    private ArrayList <Juguetes> Q_Juguetes; 
-    private ArrayList <Comida> Q_Comida; 
+    private ArrayList <Juguetes> Q_Juguetes;
 
     public Quiosco() {
         super(); 
@@ -18,7 +17,6 @@ public class Quiosco extends Locales {
         this.Q_Nombre = Q_Nombre;
         this.Q_Ropa = Q_Ropa;
         this.Q_Juguetes = Q_Juguetes;
-        this.Q_Comida = Q_Comida;
     }
 
     public String getQ_Nombre() {
@@ -44,20 +42,10 @@ public class Quiosco extends Locales {
     public void setQ_Juguetes(ArrayList<Juguetes> Q_Juguetes) {
         this.Q_Juguetes = Q_Juguetes;
     }
-
-    public ArrayList<Comida> getQ_Comida() {
-        return Q_Comida;
-    }
-
-    public void setQ_Comida(ArrayList<Comida> Q_Comida) {
-        this.Q_Comida = Q_Comida;
-    }
     
-    
-
     @Override
     public String toString() {
-        return super.toString() + "Quiosco{" + "Q_Nombre=" + Q_Nombre + ", Q_Ropa=" + Q_Ropa + ", Q_Juguetes=" + Q_Juguetes + ", Q_Comida=" + Q_Comida + '}';
+        return super.toString() + "Quiosco{" + "Q_Nombre=" + Q_Nombre + ", Q_Ropa=" + Q_Ropa + ", Q_Juguetes=" + Q_Juguetes + '}';
     }
     
     

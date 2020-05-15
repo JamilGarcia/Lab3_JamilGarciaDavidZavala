@@ -1,10 +1,20 @@
 package lab3_jamilgarciadavidzavala;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Lab3_JamilGarciaDavidZavala {
 
     static Scanner read = new Scanner(System.in);
+    static ArrayList <Empleados> Emp = new ArrayList();
+    static ArrayList <Clientes> Cli = new ArrayList();
+    static ArrayList <Tiendas> Tie = new ArrayList();
+    static ArrayList <Quiosco> Qui = new ArrayList();
+    static ArrayList <Bares> Bar = new ArrayList();
+    static ArrayList <Ropa> Rop = new ArrayList();
+    static ArrayList <Juguetes> Jug = new ArrayList();
+    static ArrayList <Comida> Com = new ArrayList();
+    
 
     public static void main(String[] args) {
         char sn = 's';
@@ -223,5 +233,14 @@ public class Lab3_JamilGarciaDavidZavala {
 
         }
     }
+    
+    public static void ImprimirArrayList (ArrayList a){
+        for (int i = 0; i < a.size(); i++) {
+            System.out.println("---------------------------------------");
+            System.out.println(i + ". " + a.get(i).toString());
+        }
+        
+    }
+    
 
 }
