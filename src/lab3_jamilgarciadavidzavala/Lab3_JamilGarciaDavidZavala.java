@@ -22,28 +22,45 @@ public class Lab3_JamilGarciaDavidZavala {
                 case 1: {
                     char sn2 = 's';
                     while (sn2 == 's') {
-                        System.out.println("1. Tiendas" + "\n2. Quiscos" + "\n3. Bares" + "\n0. Salir" + "\nElija una opción: ");
+                        //metodo listar (ArrList "tla")
+                        /*
+                        [0] loc este
+                        [0] loc este
+                        [0] loc este
+                        [0] loc este
+                        */
+                        System.out.println("1. Tiendas" + "\n2. Qui0scos" + "\n3. Bares" + "\n0. Salir" + "\nElija una opción: ");
                         int opp = read.nextInt();
                         switch (opp) {
                             case 1: {
-                                System.out.println("1. Añadir" + "\n2. Cambiar Nombre" + "\n 3. Eliminar" + "\nElija una opción: ");
+                                System.out.println("1. Añadir" + "\n2. Modificar" + "\n 3. Eliminar" + "\n 4. Listar"+ "\nElija una opción: ");
                                 int opp2 = read.nextInt();
                                 switch (opp2){
                                     case 1:{
                                         System.out.println("Nombre:");
                                         String Name = read.next();
                                         read.next();
-                                        read.next();
-                                        System.out.println("Cantidad de Empleados: ");
-                                        int Employs = read.nextInt();
-                                        System.out.println("Cantidad de Productos: ");
-                                        int Prod = read.nextInt();
-                                        System.out.println("Nombre del Gerente: ");
-                                        String Manager = read.next();
-                                        read.next();
+                                        char ssnn='s';
+                                        while (ssnn=='s'||ssnn == 'S') {                                            
+                                            //crea empleado
+                                            System.out.println("Crear otro empleado[S/N]");
+                                            ssnn = read.next().charAt(0);
+                                        }
+                                        System.out.println("Productos");
+                                        ssnn='s';
+                                        while (ssnn=='s'||ssnn == 'S') {                                            
+                                            //crea empleado
+                                            System.out.println("Crear otro producto[S/N]");
+                                            ssnn = read.next().charAt(0);
+                                        }
+                                        //listale empleados de tienda
+                                        System.out.println("Elija el Gerente: ");
+                                        int Manager = read.nextInt();
                                     }
-                                    case 2:
+                                    case 2:{
+                                    }
                                     case 3:
+                                        
                                     case 0:
                                 }
                                 break;
