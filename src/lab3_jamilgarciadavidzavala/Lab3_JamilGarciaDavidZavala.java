@@ -174,7 +174,7 @@ public class Lab3_JamilGarciaDavidZavala {
                                                 Tie.get(numt).getEmpleados();
                                                 System.out.println("Elija un nuevo Gerente");
                                                 int NMan = read.nextInt();
-                                                Tie.get(numt).setGerente(NMan);
+                                                Tie.get(numt).setGerente(Emp.get(NMan));
                                                 break;
                                             }
                                             default:
