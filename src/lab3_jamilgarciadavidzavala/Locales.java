@@ -56,7 +56,7 @@ public class Locales {
         return "Nombre: " + nombre+ "\n"
                 + "Empleados: " + empleados + "\n"
                 + "Productos: " + Productos + "\n"
-                + "Gerente: " + Gerente;
+                + "Gerente: " + Gerente + "\n";
     }
 
     
