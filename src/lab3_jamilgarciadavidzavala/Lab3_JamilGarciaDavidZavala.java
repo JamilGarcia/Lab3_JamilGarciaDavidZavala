@@ -14,6 +14,7 @@ public class Lab3_JamilGarciaDavidZavala {
     static ArrayList<Ropa> Rop = new ArrayList();
     static ArrayList<Juguetes> Jug = new ArrayList();
     static ArrayList<Comida> Com = new ArrayList();
+    static ArrayList<Personas> Per = new ArrayList();
 
     public static void main(String[] args) {
         char sn = 's';
@@ -118,7 +119,7 @@ public class Lab3_JamilGarciaDavidZavala {
                                                         System.out.println("Elija empleado a despedir: ");
                                                         int fired = read.nextInt();
                                                     }
-                                                    default: 
+                                                    default:
                                                         System.out.println("Error! Ingrese un valor valido!!");
                                                         break;
                                                 }
@@ -224,7 +225,7 @@ public class Lab3_JamilGarciaDavidZavala {
                                         int Manager = read.nextInt();
                                         Empleados tempM = Emp.get(Manager);
                                         Emp.remove(Manager);
-                                        //Tie.add(new Tiendas(tempR, tempJ, Name, tempE, tempP, tempM));
+                                        Qui.add(new Quiosco(Nombre, tempR, tempJ, Nombre, tempE, tempP, tempM));
                                     }
                                     case 2: {//Modificar Tienda
                                         //Listar tiendas
@@ -309,7 +310,58 @@ public class Lab3_JamilGarciaDavidZavala {
                             }
 
                             case 3: { // Bares
-                                System.out.println("1. Añadir" + "\n2. Cambiar Nombre" + "\n 3. Eliminar" + "\nElija una opción: ");
+                                System.out.println("1. Añadir" + "\n2. C" + "\n 3. Eliminar" + "\n 4. Listar" + "\nElija una opción: ");
+                                int opb = read.nextInt();
+                                switch (opb) {
+                                    case 1: //Añadir Bar
+                                        System.out.println("Nombre:");
+                                        String Name = read.next();
+                                        read.next();
+                                        char ssnn = 's';
+                                        ArrayList<Productos> tempP = new ArrayList();
+                                        ArrayList<Comida> tempC = new ArrayList();
+                                        while (ssnn == 's' || ssnn == 'S') {
+                                            ImprimirArrayList(Com);
+                                            System.out.println("Ingrese la comida disponible: ");
+                                            int empC = read.nextInt();
+                                            tempC.add(Com.get(empC));
+                                            tempP.add(Com.get(empC));
+                                            Com.remove(empC);
+
+                                            System.out.println("Añadir otra comida[S/N]");
+                                            ssnn = read.next().charAt(0);
+                                        }
+                                        ssnn = 's';
+                                        ArrayList<Empleados> tempE = new ArrayList();
+                                        while (ssnn == 's' || ssnn == 'S') {
+                                            ImprimirArrayList(Emp);
+                                            System.out.println("Ingrese el empleado a contrar: ");
+                                            int empC = read.nextInt();
+                                            tempE.add(Emp.get(empC));
+                                            Emp.remove(empC);
+
+                                            System.out.println("Añadir otro empleado[S/N]");
+                                            ssnn = read.next().charAt(0);
+                                        }
+                                        ImprimirArrayList(Emp);
+                                        System.out.println("Elija el Gerente: ");
+                                        int Manager = read.nextInt();
+                                        Empleados tempM = Emp.get(Manager);
+                                        Emp.remove(Manager);
+                                        Bar.add(new Bares(tempE, tempC, Name, tempE, tempP, tempM));
+                                        break;
+                                    case 2: //Modificar Bar
+
+                                        break;
+                                    case 3: //Eliminar Bar
+
+                                        break;
+                                    case 4: //Listar Bares
+
+                                        break;
+                                    default:
+                                        System.out.println("Error! Ingrese el valor valido!!");
+                                }
                                 break;
                             }
                             case 0: {//Salida
@@ -406,6 +458,52 @@ public class Lab3_JamilGarciaDavidZavala {
             System.out.println(i + ". " + a.get(i).toString());
         }
 
+    }
+
+    public static boolean Login() {
+        boolean flag = false;
+        while (flag) {
+            System.out.println("Ingrese el username: ");
+            String user = read.nextLine();
+            if (user.equals("SUDO")) {
+                System.out.println("Ingrese la contraseña: ");
+                String pass = read.nextLine();
+                if (pass.equals("SUDO")){
+                    return true; 
+                }
+            }
+            for (int i = 0; i < Per.size(); i++) {
+                if (user.equals(Per.get(i).getUser())) {
+                    System.out.println("Ingrese la contraseña: ");
+                    String pass = read.nextLine();
+                    if (pass.equals(Per.get(i).getPass())) {
+                        flag = true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    
+    public static void SigIn (){
+        System.out.println("Ingresse su ID: ");
+        int ID = read.nextInt(); 
+        boolean rev = false; 
+        while (rev) {            
+            for (int i = 0; i < Per.size(); i++) {
+                if (ID == Per.get(i).getID()){
+                    System.out.println("ID ya en uso, ingrese otro: ");
+                    ID = read.nextInt();
+                    i = 0; 
+                } else {
+                    rev = true; 
+                }
+            }
+        }
+        System.out.println("Ingrese su UserName: ");
+        String User = read.nextLine(); 
+        System.out.println("Ingrese su contraseña: ");
+        
     }
 
 }
