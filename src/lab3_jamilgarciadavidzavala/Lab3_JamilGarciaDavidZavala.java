@@ -15,6 +15,8 @@ public class Lab3_JamilGarciaDavidZavala {
     static ArrayList<Juguetes> Jug = new ArrayList();
     static ArrayList<Comida> Com = new ArrayList();
     static ArrayList<Personas> Per = new ArrayList();
+    static ArrayList<Facturacion> Semi = new ArrayList();
+    static int numCli;
 
     public static void main(String[] args) {
         char sn = 's';
@@ -148,7 +150,7 @@ public class Lab3_JamilGarciaDavidZavala {
                                                                 break;
                                                         }
                                                     }
-                                                    case 2:{ //juguetes
+                                                    case 2: { //juguetes
                                                         System.out.println("1. Añadir \n 2. eliminar");
                                                         int oopp = read.nextInt();
                                                         switch (oopp) {
@@ -499,8 +501,8 @@ public class Lab3_JamilGarciaDavidZavala {
             if (user.equals("SUDO")) {
                 System.out.println("Ingrese la contraseña: ");
                 String pass = read.nextLine();
-                if (pass.equals("SUDO")){
-                    return true; 
+                if (pass.equals("SUDO")) {
+                    return true;
                 }
             }
             for (int i = 0; i < Per.size(); i++) {
@@ -509,32 +511,145 @@ public class Lab3_JamilGarciaDavidZavala {
                     String pass = read.nextLine();
                     if (pass.equals(Per.get(i).getPass())) {
                         flag = true;
+                        numCli = i;
                     }
                 }
             }
         }
         return false;
     }
-    
-    public static void SigIn (){
+
+    public static void SigIn() {
         System.out.println("Ingresse su ID: ");
-        int ID = read.nextInt(); 
-        boolean rev = false; 
-        while (rev) {            
+        int ID = read.nextInt();
+        boolean rev = false;
+        while (rev) {
             for (int i = 0; i < Per.size(); i++) {
-                if (ID == Per.get(i).getID()){
+                if (ID == Per.get(i).getID()) {
                     System.out.println("ID ya en uso, ingrese otro: ");
                     ID = read.nextInt();
-                    i = 0; 
+                    i = 0;
                 } else {
-                    rev = true; 
+                    rev = true;
                 }
             }
         }
         System.out.println("Ingrese su UserName: ");
-        String User = read.nextLine(); 
+        String User = read.nextLine();
         System.out.println("Ingrese su contraseña: ");
-        
+        String pass = read.nextLine();
+        System.out.println("Ingrese su correo: ");
+        String correo = read.nextLine();
+        System.out.println("Ingrese su nombre completo: ");
+        String nombre = read.next();
+        nombre = read.next();
+        System.out.println("Ingrese su fecha de nacimiento [dd/mm/yyyy]: ");
+        String fechaN = read.nextLine();
+        System.out.println("Ingrese la cantidad de dinero que tiene: ");
+        int dinero = read.nextInt();
+        ArrayList<Productos> carrito = new ArrayList();
+
+        Per.add(new Clientes(dinero, carrito, ID, User, pass, correo, nombre, fechaN));
+        Cli.add(new Clientes(dinero, carrito, ID, User, pass, correo, nombre, fechaN));
     }
 
+    public static void VistaCliente() {
+        char resp = 's';
+        while (resp == 's') {
+            System.out.println(""
+                    + "----------------------------------------\n"
+                    + "Donde desea ir?\n"
+                    + "1. Tienda\n"
+                    + "2. Quiosco\n"
+                    + "3. Bar\n"
+                    + "0. Salir\n"
+                    + "Ingrese su opcion: \n"
+                    + "----------------------------------------\n");
+            int opcion = read.nextInt();
+            switch (opcion) {
+                case 1:
+                    System.out.println("Cargando tienda...");
+                    ImprimirArrayList(Tie);
+                    System.out.println("Ingrese el numero de tienda que desea ir: ");
+                    int opti = read.nextInt();
+                    System.out.println("Desea comprar: \n"
+                            + "1. Ropa\n"
+                            + "2. Juguetes\n");
+                    int opCo = read.nextInt();
+                    switch (opCo) {
+                        case 1:
+                            ImprimirArrayList(Tie.get(opti).getT_Ropa());
+                            System.out.println("Ingrese el producto que desea comprar: ");
+                            int OpCom = read.nextInt();
+                            if (Cli.get(numCli).getDinero() >= Tie.get(opti).getT_Ropa().get(OpCom).getPrecio()) {
+                                int tempdi = Cli.get(numCli).getDinero() - Tie.get(opti).getT_Ropa().get(OpCom).getPrecio();
+                                Cli.get(numCli).setDinero(tempdi);
+                                Semi.add(new Facturacion(Tie.get(opti), Cli.get(numCli).toString(), Tie.get(opti).getT_Ropa().get(OpCom).getPrecio(), "No"));
+                            } else {
+                                System.out.println("No hay suficiente dinero...");
+                            }
+                            break;
+                        case 2:
+                            System.out.println("Proximamente disponible...");
+                            break;
+                        default:
+                            System.out.println("Ingrese un valor valido!!!");
+                    }
+                    break;
+                case 2:
+                    System.out.println("Cargando tienda...");
+                    ImprimirArrayList(Tie);
+                    System.out.println("Ingrese el numero de tienda que desea ir: ");
+                    opti = read.nextInt();
+                    System.out.println("Desea comprar: \n"
+                            + "1. Ropa\n"
+                            + "2. Juguetes\n");
+                    opCo = read.nextInt();
+                    switch (opCo) {
+                        case 1:
+                            ImprimirArrayList(Tie.get(opti).getT_Ropa());
+                            System.out.println("Ingrese el producto que desea comprar: ");
+                            int OpCom = read.nextInt();
+                            if (Cli.get(numCli).getDinero() >= Tie.get(opti).getT_Ropa().get(OpCom).getPrecio()) {
+                                int tempdi = Cli.get(numCli).getDinero() - Tie.get(opti).getT_Ropa().get(OpCom).getPrecio();
+                                Cli.get(numCli).setDinero(tempdi);
+                                Semi.add(new Facturacion(Tie.get(opti), Cli.get(numCli).toString(), Tie.get(opti).getT_Ropa().get(OpCom).getPrecio(), "No"));
+                            } else {
+                                System.out.println("No hay suficiente dinero...");
+                            }
+                            break;
+                        case 2:
+                            System.out.println("Proximamente disponible...");
+                            break;
+                        default:
+                            System.out.println("Ingrese un valor valido!!!");
+                    }
+
+                    break;
+                case 3:
+                    System.out.println("Cargando tienda...");
+                    ImprimirArrayList(Bar);
+                    System.out.println("Ingrese el numero de Bar que desea ir: ");
+                    opti = read.nextInt();
+                    ImprimirArrayList(Bar.get(opti).getProductos()); 
+                    System.out.println("Ingrese el producto que desea comprar: ");
+                    int opCom = read.nextInt(); 
+                    if (Cli.get(numCli).getDinero() >= Bar.get(opti).getProductos().get(opCom).getPrecio()) {
+                                int tempdi = Cli.get(numCli).getDinero() - Bar.get(opti).getProductos().get(opCom).getPrecio();
+                                Cli.get(numCli).setDinero(tempdi);
+                                Semi.add(new Facturacion(Bar.get(opti), Cli.get(numCli).toString(), Bar.get(opti).getProductos().get(opCom).getPrecio(), "No"));
+                            } else {
+                                System.out.println("No hay suficiente dinero...");
+                            }
+                    break;
+                case 0:
+                    System.out.println("Gracias, que tenga buen dia <3");
+                    resp = 'n'; 
+                    break;
+                default:
+                    System.out.println("Ingrese un valor valido!!!!");
+            }
+        }
+
+    }
 }

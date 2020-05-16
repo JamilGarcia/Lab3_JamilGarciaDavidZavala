@@ -22,7 +22,7 @@ public class Juguetes extends Productos{
 
     @Override
     public String toString() {
-        return super.toString() + "Juguetes{" + "DescripJ=" + DescripJ + '}';
+        return super.toString() + "Descripcion: " + DescripJ + "\n";
     }
 
     

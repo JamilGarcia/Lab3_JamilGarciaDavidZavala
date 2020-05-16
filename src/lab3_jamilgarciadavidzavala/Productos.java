@@ -7,6 +7,7 @@ public class Productos {
     private int precio; 
 
     public Productos() {
+        super();
     }
 
     public Productos(String DescripP, String NombreP, int precio) {
@@ -41,7 +42,9 @@ public class Productos {
 
     @Override
     public String toString() {
-        return super.toString() + "Productos{" + "DescripP=" + DescripP + ", NombreP=" + NombreP + ", precio=" + precio + '}';
+        return super.toString()+ "Descripcion: " + DescripP + "\n"
+                + "Nombre del Producto: " + NombreP + "\n"
+                + "Precio: " + precio + "\n";
     }
     
     

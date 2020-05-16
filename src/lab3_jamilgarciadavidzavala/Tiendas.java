@@ -35,7 +35,8 @@ public class Tiendas extends Locales {
 
     @Override
     public String toString() {
-        return super.toString() + "Tiendas{" + "T_Ropa=" + T_Ropa + ", T_Juguetes=" + T_Juguetes + '}';
+        return super.toString() + "T_Ropa: " + T_Ropa + "\n"
+                + "Juguetes: " + T_Juguetes + "\n";
     }
     
     

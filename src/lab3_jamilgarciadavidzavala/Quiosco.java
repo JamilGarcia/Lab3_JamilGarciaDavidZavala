@@ -45,7 +45,8 @@ public class Quiosco extends Locales {
     
     @Override
     public String toString() {
-        return super.toString() + "Quiosco{" + "Q_Nombre=" + Q_Nombre + ", Q_Ropa=" + Q_Ropa + ", Q_Juguetes=" + Q_Juguetes + '}';
+        return super.toString()+ "Ropa: " + Q_Ropa + "\n"
+                + "Juguetes: " + Q_Juguetes+ "\n";
     }
     
     

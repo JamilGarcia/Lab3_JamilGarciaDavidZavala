@@ -25,7 +25,7 @@ public class Bares extends Locales{
 
     @Override
     public String toString() {
-        return super.toString() + "Bares{" +  ", B_Comida=" + B_Comida + '}';
+        return super.toString() +  "Comida: " + B_Comida + "\n";
     }
     
     

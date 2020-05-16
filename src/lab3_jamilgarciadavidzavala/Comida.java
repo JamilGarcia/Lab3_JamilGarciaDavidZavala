@@ -33,7 +33,8 @@ public class Comida extends Productos{
 
     @Override
     public String toString() {
-        return super.toString() + "Comida{" + "tipoC=" + tipoC + ", fechaC=" + fechaC + '}';
+        return super.toString() + "tipo: " + tipoC + "\n" 
+                + "Fecha de Caducidad: " + fechaC + "\n";
     }
     
     

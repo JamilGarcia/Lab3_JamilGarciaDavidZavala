@@ -33,7 +33,8 @@ public class Empleados extends Personas{
 
     @Override
     public String toString() {
-        return super.toString() + "Empleados{" + "Hora=" + Hora + ", ProductosV=" + ProductosV + '}';
+        return super.toString() + "Hora: " + Hora + "\n"
+                + "Productos: " + ProductosV + "\n";
     }
     
     

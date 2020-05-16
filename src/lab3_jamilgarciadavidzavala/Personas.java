@@ -73,7 +73,12 @@ public class Personas {
 
     @Override
     public String toString() {
-        return "Personas{" + "ID=" + ID + ", User=" + User + ", pass=" + pass + ", Correo=" + Correo + ", Nombre=" + Nombre + ", fechaN=" + fechaN + '}';
+        return "ID: " + ID+ "\n"
+                + "User: " + User + "\n"
+                + "Pass: " + pass + "\n"
+                + "Correo: " + Correo + "\n"
+                + "Nombre: " + Nombre + "\n"
+                + "Fecha De Nacimiento: " + fechaN + "\n";
     }
     
     
