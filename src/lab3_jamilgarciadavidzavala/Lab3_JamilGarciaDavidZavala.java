@@ -92,9 +92,9 @@ public class Lab3_JamilGarciaDavidZavala {
                                         Tie.add(new Tiendas(tempR, tempJ, Name, tempE, tempP, tempM));
                                     }
                                     case 2: {//Modificar Tienda
-                                        //Listar tiendas
-                                        System.out.println("Elija tienda a modificar ");
-                                        int ModStore = read.nextInt();
+                                        ImprimirArrayList(Tie);
+                                        System.out.println("Elija la Tienda a modificar:");
+                                        int numt = read.nextInt();
                                         System.out.println("1.Nombre \n2.Empleado \n3. Producto \n4. Gerente \n Opción:");
                                         int Modsw = read.nextInt();
                                         switch (Modsw) {
@@ -102,6 +102,7 @@ public class Lab3_JamilGarciaDavidZavala {
                                                 System.out.println("Nuevo Nombre: ");
                                                 String NName = read.next();
                                                 read.next();
+                                                Tie.get(numt).setNombre(NName);
                                                 break;
                                             }
                                             case 2: {//Modificar empleados de la tienda
@@ -109,13 +110,13 @@ public class Lab3_JamilGarciaDavidZavala {
                                                 int oopp = read.nextInt();
                                                 switch (oopp) {
                                                     case 1: { //Contratar
-                                                        //listar empleados generales
+                                                        ImprimirArrayList(Emp);
                                                         System.out.println("Elija empleado a contratar: ");
                                                         int Hired = read.nextInt();
                                                         break;
                                                     }
                                                     case 2: { //Despedir
-                                                        //listar empleados tienda
+                                                        ImprimirArrayList(Tie.get(numt).getEmpleados());
                                                         System.out.println("Elija empleado a despedir: ");
                                                         int fired = read.nextInt();
                                                     }
@@ -125,28 +126,55 @@ public class Lab3_JamilGarciaDavidZavala {
                                                 }
                                             }
                                             case 3: {//Modificar productos de la tienda
-                                                System.out.println("1. Añadir \n 2. eliminar");
-                                                int oopp = read.nextInt();
-                                                switch (oopp) {
-                                                    case 1: {
-                                                        ImprimirArrayList(Tie.get(0).getEmpleados());
-                                                        System.out.println("Elija producto a Añadir: ");
-                                                        int Hired = read.nextInt();
-                                                        break;
+                                                System.out.println("1. Ropa \n 2. Juguetes");
+                                                int type = read.nextInt();
+                                                switch (type) {
+                                                    case 1: { //Ropa
+                                                        System.out.println("1. Añadir \n 2. eliminar");
+                                                        int oopp = read.nextInt();
+                                                        switch (oopp) {
+                                                            case 1: {
+                                                                ImprimirArrayList(Rop);
+                                                                System.out.println("Elija producto a Añadir: ");
+                                                                int add = read.nextInt();
+                                                                break;
+                                                            }
+                                                            case 2: {
+                                                                ImprimirArrayList(Tie.get(numt).getT_Ropa());
+                                                                System.out.println("Elija producto a Eliminar: ");
+                                                                int del = read.nextInt();
+                                                            }
+                                                            default:
+                                                                break;
+                                                        }
                                                     }
-                                                    case 2: {
-                                                        //listar empleados tienda
-                                                        System.out.println("Elija producto a Eliminar: ");
-                                                        int fired = read.nextInt();
+                                                    case 2:{ //juguetes
+                                                        System.out.println("1. Añadir \n 2. eliminar");
+                                                        int oopp = read.nextInt();
+                                                        switch (oopp) {
+                                                            case 1: {
+                                                                ImprimirArrayList(Jug);
+                                                                System.out.println("Elija producto a Añadir: ");
+                                                                int add = read.nextInt();
+                                                                break;
+                                                            }
+                                                            case 2: {
+                                                                ImprimirArrayList(Tie.get(numt).getT_Juguetes());
+                                                                System.out.println("Elija producto a Eliminar: ");
+                                                                int del = read.nextInt();
+                                                            }
+                                                            default:
+                                                                break;
+                                                        }
                                                     }
                                                     default:
-                                                        break;
                                                 }
                                             }
                                             case 4: {//Modificar gerente de la tienda
-                                                //listar empleados
+                                                Tie.get(numt).getEmpleados();
                                                 System.out.println("Elija un nuevo Gerente");
                                                 int NMan = read.nextInt();
+                                                Tie.get(numt).setGerente(NMan);
                                                 break;
                                             }
                                             default:
@@ -175,7 +203,7 @@ public class Lab3_JamilGarciaDavidZavala {
                                 System.out.println("1. Añadir" + "\n2. Modificar" + "\n 3. Eliminar" + "\n 4. Listar" + "\nElija una opción: ");
                                 int opp2 = read.nextInt();
                                 switch (opp2) {
-                                    case 1: {//Añadir Tienda
+                                    case 1: {//Añadir Quiosco
                                         ImprimirArrayList(Tie);
                                         System.out.println("Elija una tienda: ");
                                         int name = read.nextInt();
@@ -227,17 +255,20 @@ public class Lab3_JamilGarciaDavidZavala {
                                         Emp.remove(Manager);
                                         Qui.add(new Quiosco(Nombre, tempR, tempJ, Nombre, tempE, tempP, tempM));
                                     }
-                                    case 2: {//Modificar Tienda
+                                    case 2: {//Modificar Quisco
                                         //Listar tiendas
-                                        System.out.println("Elija tienda a modificar ");
+                                        System.out.println("Elija Quiosco a modificar ");
                                         int ModStore = read.nextInt();
                                         System.out.println("1.Nombre \n2.Empleado \n3. Producto \n4. Gerente \n Opción:");
                                         int Modsw = read.nextInt();
                                         switch (Modsw) {
-                                            case 1: {//Modificar nombre de la tienda
-                                                System.out.println("Nuevo Nombre: ");
-                                                String NName = read.next();
-                                                read.next();
+                                            case 1: {//Modificar nombre del Quiosco
+                                                ImprimirArrayList(Tie);
+                                                System.out.println("Elija una tienda: ");
+                                                int name = read.nextInt();
+                                                String Nombre = Tie.get(name).getNombre();
+                                                char ssnn = 's';
+                                                ArrayList<Empleados> tempE = new ArrayList();
                                                 break;
                                             }
                                             case 2: {//Modificar empleados de la tienda
@@ -265,13 +296,13 @@ public class Lab3_JamilGarciaDavidZavala {
                                                 int oopp = read.nextInt();
                                                 switch (oopp) {
                                                     case 1: {
-                                                        ImprimirArrayList(Tie.get(0).getEmpleados());
+                                                        ImprimirArrayList(Tie.get(0).getProductos());
                                                         System.out.println("Elija producto a Añadir: ");
                                                         int Hired = read.nextInt();
                                                         break;
                                                     }
                                                     case 2: {
-                                                        //listar empleados tienda
+                                                        ImprimirArrayList(Tie.get(0).getProductos());
                                                         System.out.println("Elija producto a Eliminar: ");
                                                         int fired = read.nextInt();
                                                     }
